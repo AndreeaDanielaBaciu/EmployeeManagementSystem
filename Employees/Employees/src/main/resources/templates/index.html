@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="UTF-8">
+<title>Employee Management System</title>
+</head>
+<body>
+	<h1>Employee Management System</h1>
+
+	<a href="/create-employee">Create a new employee</a>
+	<br />
+	<a href="/show-employees">Show all employees</a>
+	
+	<hr />
+
+	<form method="POST" th:action="@{search-by-address}">
+		<label>Search by Address: </label>
+		<input type="text" name="address" />
+		<input type="submit" value="Search" />
+	</form>
+	
+	<hr />
+
+	<form method="POST" th:action="@{search-by-name}">
+		<label>Search by First Name: </label>
+		<input type="text" name="firstName" />
+		<input type="submit" value="Search" />
+	</form>
+	
+	<hr />
+	
+	<form method="POST" th:action="@{search-by-last-name}">
+		<label>Search by Last Name: </label>
+		<input type="text" name="lastName" />
+		<input type="submit" value="Search" />
+	</form>
+	
+	<hr />
+	
+	<form method="POST" th:action="@{/search-by-full-name}">
+	    <label>Search by Full Name: </label>
+	    <input type="text" name="fullName" />
+	    <input type="submit" value="Search" />
+	</form>
+	
+	<hr/>
+	
+	<form method="POST" th:action="@{/search-employees}">
+	    <label>Search an employee: </label>
+	    <input type="text" name="searchInput" />
+	    <input type="submit" value="Search" />
+	</form>
+	
+	
+	
+	
+</body>
+</html>

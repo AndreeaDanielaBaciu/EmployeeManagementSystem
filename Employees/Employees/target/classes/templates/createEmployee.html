@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="UTF-8">
+<title>Create a new Employee</title>
+</head>
+<body>
+	<h1>Create a new Employee</h1>
+	
+	<form method="POST" th:object="${employee}" th:action="@{submit-new-employee}">
+		<input name="id" th:type="hidden" th:field="*{id}"/>
+		<br />
+
+		<label>First Name: </label>
+		<input name="firstName" th:type="text" th:field="*{firstName}" required/>
+		<p class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+		<br />
+		
+		<label>Last Name: </label>
+		<input name="lastName" th:type="text" th:field="*{lastName}" required/>
+		<p class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+		<br />
+		
+		<label>Hire Date: </label>
+		<input name="hireDate" th:type="date" th:field="*{hireDate}" required/>
+		<p class="error" th:if="${#fields.hasErrors('hireDate')}" th:errors="*{hireDate}"></p>
+		<br />
+		
+		<label>Address: </label>
+		<input name="address" th:type="test" th:field="*{address}" required/>
+		<p class="error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>	
+		<br />
+		
+		<input type="submit" value="Create Employee" />
+	
+	</form>
+	
+	<p>
+		<b th:text="${errorMessage}"></b>
+	</p>
+	
+	<a href="/">Back to homepage</a>
+</body>
+</html>
